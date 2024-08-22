@@ -7,7 +7,7 @@ This Python script create KBLI and KBJI prediction based on the job description 
 - Preprocess input file (stemming, removing stopwords, vectorizing and tokenize).
 - Create KBLI and KBJI prediction based on input.
 - Create a comparison between prediction result and the current input.
-- Outputs results to a single Excel file acting as comparison.
+- Outputs results to Excel file acting as comparison inside the ouput directory.
 
 ## Academic Papers
 
@@ -35,11 +35,12 @@ pip install pandas openpyxl nltk pysastrawi scikit-learn==1.4.1.post1
 
 1. Open svm_predict.ipynb in your favorite notebook environment
 
-2. Change the INPUT into the path of your query result and OUTPUT into the path where you want to save the result:
+2. Change the INPUT into the path of your query result, SPV into the path of supervisor data and OUTPUT into the directory path where you want to save the result:
 
    ```
    INPUT = 'sqllab_untitled_query_1_20240821T043054.csv'
-   OUTPUT = 'hasil_pemeriksaan_KBLI_KBJI_2024-8-21.xlsx' 
+   SPV = 'wilayah_tugas_sak_82024.xlsx'
+   OUTPUT = 'hasil_pemeriksaan_KBLI_KBJI' 
    ```
 
 3. Run the script.
@@ -48,11 +49,31 @@ pip install pandas openpyxl nltk pysastrawi scikit-learn==1.4.1.post1
 
 ## Input Data Structure
 
-| usaha  | produk | bidang | kbli | kbli_label | kbji | kbji_label|
-| --- | --- | --- | --- | --- | --- | --- |
-| ... | ... | ... | ... | ... | ... | ... |
+### Query data
+
+| idbs | no_dsrt | namakrt | art | usaha  | produk | bidang | kbli | kbli_label | kbji | kbji_label|
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| ... | ... | ... | ... | ... | ... | ... | ... | ... | ... | ... |
 
 Otherwise, use the result from the following [Query](https://fasih-dashboard.bps.go.id/superset/sqllab/?savedQueryId=8701) (need VPN).
+
+### Supervisor data
+
+For Supervisor data it should have the following columns.
+
+| idbs | pcl | pml |
+| --- | --- | --- |
+| ... | ... | ... |
+
+### Results
+
+```ascii
+/OUTPUT
+├── date_complete.xlsx
+├── date_Supervisor 1.xlsx
+├── date_Supervisor 2.xlsx
+└── date_Supervisor 3.xlsx
+```
 
 ## Performance
 
@@ -70,7 +91,7 @@ Otherwise, use the result from the following [Query](https://fasih-dashboard.bps
 
 ## Contributing
 
-Feel free to fork this repository and submit pull requests with any improvements or bug fixes.
+Feel free to fork this repository and submit pull requests with any improvements or bug fixes. Please contact the author if you want to contribute data and help with model development.
 
 ## Author
 
