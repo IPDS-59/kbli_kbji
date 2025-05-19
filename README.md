@@ -11,7 +11,7 @@ This Python script create KBLI and KBJI prediction based on the job description 
 
 ## Academic Papers
 
-[Prociding Seminar Nasional Official Statistics](https://prosiding.stis.ac.id/index.php/semnasoffstat/article/view/2180)
+[Proceeding Seminar Nasional Official Statistics](https://prosiding.stis.ac.id/index.php/semnasoffstat/article/view/2180)
 
 ## Prerequisites
 
